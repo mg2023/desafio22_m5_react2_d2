@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import MyContext from "../my_context";
 
 export default function Galeria() {
+//   Requerimiento n4: Hacer uso del hook useContext para acceder al estado global desde los
+// componentes que lo necesiten. (3 Puntos)
   const { fotos, setFotos } = useContext(MyContext)
 
   const setFavorito = (id) => {
