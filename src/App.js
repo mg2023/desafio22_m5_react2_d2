@@ -19,8 +19,8 @@ export default function App() {
     photos = photos.map((photo) => ({
       id: photo.id,
       src: photo.src.tiny,
-      desc: photo.alt,
-      favorito: false
+      descripcion: photo.alt,
+      favorito: photo.liked
     }))
     setFotos(photos)
 
@@ -30,7 +30,7 @@ export default function App() {
     getFotos()
   }, [])
 
-  console.log(fotos)
+  // console.log(fotos)
 
   return (
     <div className="App">
