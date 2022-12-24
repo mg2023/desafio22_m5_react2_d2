@@ -1,15 +1,17 @@
 import "../assets/css/galeria.css";
-import { useContext } from 'react';
 import Heart from "./Heart";
+
+import { useContext } from 'react';
 import MyContext from "../my_context";
 
 export default function Galeria() {
   const { fotos, setFotos } = useContext(MyContext)
-  // console.log(fotos)
 
   const setFavorito = (id) => {
     const fotoIndex = fotos.findIndex((f) => f.id === id)
     fotos[fotoIndex].favorito = !fotos[fotoIndex].favorito
+    //con spread operator se sobreescribe el objeto que tiene cambios, 
+    //y el resto se mantiene como estan
     setFotos([...fotos])
   }
 
@@ -24,7 +26,7 @@ export default function Galeria() {
           key={i}
           >
             <Heart filled={foto.favorito} />
-            <p> {foto.desc}</p>
+            <p> {foto.descripcion}</p>
           </div>
         ))
       }
